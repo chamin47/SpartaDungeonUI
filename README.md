@@ -16,6 +16,8 @@
 - - 3. Inventory 보기 
     - Status 버튼, Inventory 버튼 - 사라지기
     - 우측에 인벤토리 표시 (여기까지 완료)
+    - ![image](https://github.com/chamin47/SpartaDungeonUI/assets/152050575/58f729e0-91e5-48b1-a152-eb60fe0cc2fa)
+
     - 아이템을 클릭하면 장착관리 (여기서부터 미구현)
         - 아이템 장착 중 - X  : 장착 확인 팝업
             
