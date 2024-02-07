@@ -9,24 +9,32 @@ public class UIManager : MonoBehaviour
 {
     public GameObject statusPanel;
     public GameObject inventoryPanel;
-    public TextMeshPro playerIdText;
-    public TextMeshPro levelText;
-    public TextMeshPro goldText;
+    public TextMeshProUGUI playerIdText;
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI goldText;
+	public TextMeshProUGUI AtkText;
+	public TextMeshProUGUI DefText;
+	public TextMeshProUGUI HpText;
+	public TextMeshProUGUI CriticalText;
 
-    private PlayerData playerData;
+	private PlayerData playerData;
 
 	private void Start()
 	{
-        playerData = new PlayerData("CDM", 10, 20000);
+        playerData = new PlayerData("CDM", 10, 20000, 35, 40, 100, 25);
         UpdateUI();
 	}
 
 	private void UpdateUI()
 	{
         playerIdText.text = "ID: " + playerData.playerId;
-        levelText.text = "Level: " + playerData.level;
-        goldText.text = "Gold: " + playerData.gold;
-	}
+        levelText.text = "LEVEL: " + playerData.level;
+        goldText.text = ""+playerData.gold;
+        AtkText.text = "" + playerData.Atk;
+        DefText.text = "" + playerData.Def;
+        HpText.text = "" + playerData.Hp;
+        CriticalText.text = "" + playerData.Critical;
+    }
 
     public void ShowStatus()
     {
