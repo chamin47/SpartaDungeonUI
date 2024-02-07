@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 	public List<Item> items;
+	public static event Action OnItemUpdated; // 아이템 업데이트 이벤트 정의
 
 	[SerializeField]
 	private Transform slotParent;
@@ -42,10 +44,16 @@ public class Inventory : MonoBehaviour
 		{
 			items.Add(_item);
 			FreshSlot();
+			OnItemUpdated?.Invoke(); // 아이템 업데이트 이벤트 호출
 		}
 		else
 		{
 			print("슬롯이 가득 차 있습니다.");
 		}
+	}
+
+	public static void TriggerItemUpdatedEvent()
+	{
+		OnItemUpdated?.Invoke();
 	}
 }

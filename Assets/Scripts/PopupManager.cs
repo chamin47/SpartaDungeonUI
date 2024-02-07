@@ -18,10 +18,9 @@ public class PopupManager : MonoBehaviour
 	// "Yes" 버튼 클릭 시 호출될 메소드
 	public void OnConfirmEquip()
 	{
-		// 아이템의 장착 상태를 토글
 		currentItem.isEquipped = !currentItem.isEquipped;
 		equipConfirmPopup.SetActive(false);
-		// 여기에 아이템 장착/해제 후 처리 로직 추가 (예: 인벤토리 UI 업데이트)
+		Inventory.TriggerItemUpdatedEvent();
 	}
 
 	// "No" 버튼 클릭 시 호출될 메소드

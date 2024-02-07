@@ -14,15 +14,32 @@ public class Slot : MonoBehaviour
 		set
 		{
 			_item = value;
-			if (_item != null)
-			{
-				image.sprite = item.itemImage;
-				image.color = new Color(1, 1, 1, 1);
-			}
-			else
-			{
-				image.color = new Color(1, 1, 1, 0);
-			}
+			UpdateSlotUI();
+		}
+	}
+
+	void OnEnable()
+	{
+		Inventory.OnItemUpdated += UpdateSlotUI; // 이벤트 구독
+	}
+
+	void OnDisable()
+	{
+		Inventory.OnItemUpdated -= UpdateSlotUI; // 이벤트 구독 해제
+	}
+
+	void UpdateSlotUI()
+	{
+		if (_item != null)
+		{
+			image.sprite = item.itemImage;
+			image.color = new Color(1, 1, 1, 1);
+			// 장착 상태에 따른 UI 변경, 예를 들어 테두리 변경 등
+			image.transform.parent.GetComponent<Image>().color = _item.isEquipped ? Color.green : Color.white;
+		}
+		else
+		{
+			image.color = new Color(1, 1, 1, 0);
 		}
 	}
 }
