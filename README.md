@@ -13,7 +13,7 @@
     - 뒤로가기 버튼을 누르면 1번 화면으로 이동
     - ![image](https://github.com/chamin47/SpartaDungeonUI/assets/152050575/15b60644-b347-45af-8879-895e0bd648ff)
  
-- - 3. Inventory 보기 
+- - 3. Inventory 보기 (완료)
     - Status 버튼, Inventory 버튼 - 사라지기
     - 우측에 인벤토리 표시 
     - ![image](https://github.com/chamin47/SpartaDungeonUI/assets/152050575/58f729e0-91e5-48b1-a152-eb60fe0cc2fa)
@@ -32,6 +32,8 @@
             
             
     - 장착중인 아이템은 표시
+![image](https://github.com/chamin47/SpartaDungeonUI/assets/152050575/52fc66c3-3897-4345-bdea-cfe98806fe85)
+
         
        
         
